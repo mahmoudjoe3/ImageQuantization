@@ -51,12 +51,12 @@ namespace ImageQuantization
             int smallest = index;
             int left = get_Left(index);
             int right = get_Right(index);
-            if (left < elements.Count && elements[left].key < elements[smallest].key)
+            if (left < elements.Count && elements[left].weight < elements[smallest].weight)
             {
                 smallest = left;
 
             }
-            if (right < elements.Count && elements[right].key < elements[smallest].key)
+            if (right < elements.Count && elements[right].weight < elements[smallest].weight)
             {
                 smallest = right;
             }
@@ -98,7 +98,7 @@ namespace ImageQuantization
         public void heapify_Up(int index)
         {
             int parent = get_Parent(index);
-            if (parent >= 0 && elements[parent].key > elements[index].key)
+            if (parent >= 0 && elements[parent].weight > elements[index].weight)
             {
                 Node temp = elements[index];
                 elements[index] = elements[parent];

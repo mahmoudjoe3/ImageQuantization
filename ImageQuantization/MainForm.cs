@@ -46,6 +46,7 @@ namespace ImageQuantization
             numberofcolor.Text = ImageOperations.Get_Number_of_color(ImageMatrix).ToString();
             MST mst= ImageOperations.MST_Weight(ImageMatrix);
             MST_Sum.Text = mst.Weight.ToString();
+            ImageOperations.Extract_color_palette(mst, 2);
             
         }
        

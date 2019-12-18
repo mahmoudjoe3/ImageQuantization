@@ -8,12 +8,12 @@ namespace ImageQuantization
 {
     public class Node
     {
-        public int vertix;
-        public double key;
+        public int index;
+        public double weight;
         public Node() { }
         public void set_key(double val)
         {
-            this.key = val;
+            this.weight = val;
         }
     }
 }

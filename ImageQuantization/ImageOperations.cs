@@ -21,7 +21,11 @@ namespace ImageQuantization
     {
         public double red, green, blue;
     }
-
+    public struct Color
+    {
+        public RGBPixel val;
+        public int index;
+    };
 
     /// <summary>
     /// Library of static functions that deal with images
@@ -244,11 +248,7 @@ namespace ImageQuantization
             return Filtered;
         }
 
-        public struct color
-        {
-           public  RGBPixel val;
-            public int index;
-        };
+
 
 
         
@@ -295,12 +295,12 @@ namespace ImageQuantization
             }
                 return  list_of_dstinected_color;
         }
-        private static List<color> list_of_indexed_color(List<RGBPixel> h)
+        private static List<Color> list_of_indexed_color(List<RGBPixel> h)
         {
-            List<color> index_color = new List<color>();
+            List<Color> index_color = new List<Color>();
             for (int i = 0; i < h.Count; i++)
             {
-                color c1 = new color();
+                Color c1 = new Color();
                 c1.index = i;
                 c1.val = h[i];
                 index_color.Add(c1);
@@ -316,7 +316,7 @@ namespace ImageQuantization
         {
             long size;
             List<RGBPixel> color_list = List_of_Dstinected_Color(ImageMatrix);
-            List<color> index_color = list_of_indexed_color(color_list);
+            List<Color> index_color = list_of_indexed_color(color_list);
             List<Node> tree = new List<Node>();
             heap heap = new heap();
 
@@ -336,21 +336,21 @@ namespace ImageQuantization
             p[0] = -1; d[0] = 0;
             //node
             Node node0 = new Node();
-            node0.vertix = 0;
-            node0.key = 0;
+            node0.index = 0;
+            node0.weight = 0;
             heap.insert(node0);
 
             while (!heap.empty())
             {
                 //node
                 Node node = heap.extract_Min();
-                tree.Add(node);
-                int index = node.vertix;
+                
+                int index = node.index;
                 if (k[index]==true) continue;
                 k[index] = true;
                 RGBPixel color1 = index_color[index].val;
                 int i = 0;
-
+                tree.Add(node);
                 foreach (var color2 in color_list)
                 {
                     if (i != index)
@@ -366,8 +366,8 @@ namespace ImageQuantization
                             p[i] = index;
                             //
                             Node node1 = new Node();
-                            node1.key = d[i];
-                            node1.vertix = i;
+                            node1.weight = d[i];
+                            node1.index = i;
                            // int indexx = i;
                             heap.insert(node1);
                         }
@@ -379,8 +379,97 @@ namespace ImageQuantization
             double weight = 0;
             for (int i = 0; i < size; i++)
                 weight += d[i];
-            MST mST = new MST(weight, tree, p);
+            MST mST = new MST(weight, tree, p,index_color);
             return mST;
+
+        }
+
+
+        public static List<RGBPixelD> Extract_color_palette(MST mst,int Num_of_clusters)
+        {
+            List<Node> tree=mst.tree;
+            int[] parent=mst.parent;
+            List<RGBPixelD> Color_palette = new List<RGBPixelD>();
+            for (int l = 0; l < Num_of_clusters - 1; l++)
+            {
+                int i = 0;
+                int index = 0;
+                double W = double.MinValue;
+                foreach (Node color in tree)
+                {
+                    if (W < color.weight)
+                    {
+                        W = color.weight;
+                        index = i;
+                    }
+                    i++;
+                }
+                tree[index].weight = 0;
+                parent[index] = -1;
+            }
+            // clusters of the tree
+            MST clustered_mst = new MST(mst.Weight, tree, parent, mst.index_color);
+
+            for (int r = 0; r < parent.Length; r++)
+            {
+                if (parent[r] == -1)
+                {
+                    RGBPixelD avg;
+                    avg.red = 0; avg.blue = 0; avg.green = 0;
+                    int counter=1;
+                    int old = r;
+                    Color_palette.Add(avgcolor(clustered_mst, r,old,avg,counter));
+                }
+                //RGBPixel r = avgcolor(clustered_mst);
+
+
+            }
+            return Color_palette;
+        }
+
+        
+
+            
+
+        public static RGBPixelD avgcolor(MST mst,int Pindex,int oldindex,RGBPixelD avg,int count)
+        {
+                List<Node> tree = mst.tree;
+                int[] parent = mst.parent;
+                int root = tree[Pindex].index;
+                bool found = false;
+                avg.red +=mst.index_color[root].val.red;
+                avg.blue += mst.index_color[root].val.blue;
+                avg.green += mst.index_color[root].val.green;
+            for (int r = 0; r < parent.Length; r++)
+            {
+                if (root == parent[r])
+                {
+                    oldindex = Pindex;
+                    Pindex = r;
+                    parent[Pindex] = -2;
+                    found = true;
+                   return avgcolor(mst,Pindex, oldindex, avg, ++count);
+                }
+            }
+            if(found==false)
+            {
+                for (int r = 0; r < parent.Length; r++)
+                {
+                    if (tree[oldindex].index == parent[r])
+                    {
+                        avg.red -= mst.index_color[tree[oldindex].index].val.red;
+                        avg.blue -= mst.index_color[tree[oldindex].index].val.blue;
+                        avg.green -= mst.index_color[tree[oldindex].index].val.green;
+                        return avgcolor(mst,oldindex,Pindex, avg, count);
+                    }
+                }
+                
+            }
+            avg.red /= count;
+            avg.blue /= count;
+            avg.green /= count;
+            return avg;
+
 
         }
     }
