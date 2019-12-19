@@ -251,7 +251,7 @@ namespace ImageQuantization
 
 
 
-        
+
         /// <summary>
         /// get the distinected color in a list of pair 
         /// 1- counter of the color and
@@ -260,12 +260,12 @@ namespace ImageQuantization
         /// </summary>
         /// <param name="ImageMatrix"></param>
         /// <returns>Dictionary of distinected color and its number </returns>
-        
+
         private static List<RGBPixel> List_of_Dstinected_Color(RGBPixel[,] ImageMatrix)
         {
             List<RGBPixel> list_of_dstinected_color = new List<RGBPixel>();
             bool[,,] color_state = new bool[256, 256, 256];
-            for(int i=0;i<=255; i++)
+            for (int i = 0; i <= 255; i++)
             {
                 for (int j = 0; j <= 255; j++)
                 {
@@ -277,7 +277,7 @@ namespace ImageQuantization
             }
             int Height = ImageMatrix.GetLength(0);
             int Width = ImageMatrix.GetLength(1);
-            
+
             for (int i = 0; i < Height; i++)
             {
                 for (int j = 0; j < Width; j++)
@@ -286,14 +286,14 @@ namespace ImageQuantization
                     int ii = ImageMatrix[i, j].red;
                     int jj = ImageMatrix[i, j].green;
                     int kk = ImageMatrix[i, j].blue;
-                    if (color_state[ii,jj,kk]==false)
+                    if (color_state[ii, jj, kk] == false)
                     {
                         list_of_dstinected_color.Add(ImageMatrix[i, j]);
                         color_state[ii, jj, kk] = true;
                     }
                 }
             }
-                return  list_of_dstinected_color;
+            return list_of_dstinected_color;
         }
         private static List<Color> list_of_indexed_color(List<RGBPixel> h)
         {
@@ -311,7 +311,7 @@ namespace ImageQuantization
         {
             return List_of_Dstinected_Color(ImageMatrix).Count;
         }
-        
+
         public static MST MST_Weight(RGBPixel[,] ImageMatrix)
         {
             long size;
@@ -324,14 +324,14 @@ namespace ImageQuantization
             bool[] k = new bool[size];
             int[] p = new int[size];
             double[] d = new double[size];
-            
+
             //
-            
+
             for (int i = 1; i < size; i++)
             {
                 k[i] = false;
                 d[i] = double.MaxValue;
-               
+
             }
             p[0] = -1; d[0] = 0;
             //node
@@ -344,9 +344,9 @@ namespace ImageQuantization
             {
                 //node
                 Node node = heap.extract_Min();
-                
+
                 int index = node.index;
-                if (k[index]==true) continue;
+                if (k[index] == true) continue;
                 k[index] = true;
                 RGBPixel color1 = index_color[index].val;
                 int i = 0;
@@ -368,34 +368,34 @@ namespace ImageQuantization
                             Node node1 = new Node();
                             node1.weight = d[i];
                             node1.index = i;
-                           // int indexx = i;
+                            // int indexx = i;
                             heap.insert(node1);
                         }
                     }
-                        i++;
-                    
+                    i++;
+
                 }
             }
             double weight = 0;
             for (int i = 0; i < size; i++)
                 weight += d[i];
-            MST mST = new MST(weight, tree, p,index_color);
+            MST mST = new MST(weight, tree, p, index_color);
             return mST;
 
         }
 
-
-        public static List<RGBPixelD> Extract_color_palette(MST mst,int Num_of_clusters)
+        public static RGBPixelD[] Extract_color_palette(MST mst, int Num_of_clusters)
         {
-            List<Node> tree=mst.tree;
-            int[] parent=mst.parent;
-            List<RGBPixelD> Color_palette = new List<RGBPixelD>();
-            for (int l = 0; l < Num_of_clusters - 1; l++)
+            List<Node> tree = mst.tree;
+            int[] parent = mst.parent;
+            int[] roots = new int[Num_of_clusters];
+            RGBPixelD[] Color_palette = new RGBPixelD[Num_of_clusters];
+            for (int l = 0; l < Num_of_clusters - 1; l++)  //E(K)
             {
                 int i = 0;
                 int index = 0;
                 double W = double.MinValue;
-                foreach (Node color in tree)
+                foreach (Node color in tree)   //E(D)
                 {
                     if (W < color.weight)
                     {
@@ -406,40 +406,56 @@ namespace ImageQuantization
                 }
                 tree[index].weight = 0;
                 parent[index] = -1;
-            }
+                roots[l] = index;
+            }                                        //E(D*K)
             // clusters of the tree
             MST clustered_mst = new MST(mst.Weight, tree, parent, mst.index_color);
+            for (int r = 0; r < roots.Length; r++)  //E(K*V^2)
+                Color_palette[r] = avgcolor_BFS(clustered_mst, roots[r]);
 
-            for (int r = 0; r < parent.Length; r++)
-            {
-                if (parent[r] == -1)
-                {
-                    RGBPixelD avg;
-                    avg.red = 0; avg.blue = 0; avg.green = 0;
-                    int counter=1;
-                    int old = r;
-                    Color_palette.Add(avgcolor(clustered_mst, r,old,avg,counter));
-                }
-                //RGBPixel r = avgcolor(clustered_mst);
-
-
-            }
             return Color_palette;
         }
 
-        
 
-            
-
-        public static RGBPixelD avgcolor(MST mst,int Pindex,int oldindex,RGBPixelD avg,int count)
+        public static RGBPixelD avgcolor_BFS(MST mst, int Pindex)//E(V^2)
         {
-                List<Node> tree = mst.tree;
-                int[] parent = mst.parent;
-                int root = tree[Pindex].index;
-                bool found = false;
-                avg.red +=mst.index_color[root].val.red;
+            List<Node> tree = mst.tree;
+            int[] parent = mst.parent;
+            int count = 1;
+            RGBPixelD avg = new RGBPixelD();
+            Queue<int> Q = new Queue<int>();
+            Q.Enqueue(Pindex);
+            while (Q.Count != 0) //E(V)
+            {
+                int root = tree[Q.Dequeue()].index;
+                avg.red += mst.index_color[root].val.red;
                 avg.blue += mst.index_color[root].val.blue;
                 avg.green += mst.index_color[root].val.green;
+                for (int r = 0; r < parent.Length; r++) //E(V)
+                {
+                    if (root == parent[r])
+                    {
+                        Q.Enqueue(r);
+                        count++;
+                    }
+                }
+            }
+            avg.red /= count;
+            avg.blue /= count;
+            avg.green /= count;
+            return avg;
+        }
+
+
+        public static RGBPixelD avgcolor_DFS(MST mst, int Pindex, int oldindex, RGBPixelD avg, int count)
+        {
+            List<Node> tree = mst.tree;
+            int[] parent = mst.parent;
+            int root = tree[Pindex].index;
+            bool found = false;
+            avg.red += mst.index_color[root].val.red;
+            avg.blue += mst.index_color[root].val.blue;
+            avg.green += mst.index_color[root].val.green;
             for (int r = 0; r < parent.Length; r++)
             {
                 if (root == parent[r])
@@ -448,10 +464,10 @@ namespace ImageQuantization
                     Pindex = r;
                     parent[Pindex] = -2;
                     found = true;
-                   return avgcolor(mst,Pindex, oldindex, avg, ++count);
+                    return avgcolor_DFS(mst, Pindex, oldindex, avg, ++count);
                 }
             }
-            if(found==false)
+            if (found == false)
             {
                 for (int r = 0; r < parent.Length; r++)
                 {
@@ -460,10 +476,10 @@ namespace ImageQuantization
                         avg.red -= mst.index_color[tree[oldindex].index].val.red;
                         avg.blue -= mst.index_color[tree[oldindex].index].val.blue;
                         avg.green -= mst.index_color[tree[oldindex].index].val.green;
-                        return avgcolor(mst,oldindex,Pindex, avg, count);
+                        return avgcolor_DFS(mst, oldindex, Pindex, avg, count);
                     }
                 }
-                
+
             }
             avg.red /= count;
             avg.blue /= count;
@@ -471,6 +487,48 @@ namespace ImageQuantization
             return avg;
 
 
+        }
+        public static RGBPixel[,] Quntization(RGBPixel[,] ImageMatrix, RGBPixelD[] pallete)
+        {
+            int width = ImageMatrix.GetLength(1);
+            int height = ImageMatrix.GetLength(0);
+            RGBPixel[,] Image = new RGBPixel[height, width];
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    double min = double.MaxValue;
+                    byte r = 0;
+                    byte g = 0;
+                    byte b = 0;
+                    RGBPixel col = new RGBPixel();
+                    for (int p = 0; p < pallete.Length; p++)
+                    {
+                        r = (byte)pallete[p].red;
+                        g = (byte)pallete[p].green;
+                        b = (byte)pallete[p].blue;
+                        byte rr = ImageMatrix[i, j].red;
+                        byte gg = ImageMatrix[i, j].green;
+                        byte bb = ImageMatrix[i, j].blue;
+                        double dis = Math.Sqrt(Math.Pow(r - rr, 2) + Math.Pow(g - gg, 2) + Math.Pow(b - bb, 2));
+
+
+                        if (dis < min)
+                        {
+                            min = dis;
+                            col.red = (byte)pallete[p].red;
+                            col.green = (byte)pallete[p].green;
+                            col.blue = (byte)pallete[p].blue;
+                        }
+
+                    }
+                    Image[i, j].red = col.red;
+                    Image[i, j].green = col.green;
+                    Image[i, j].blue = col.blue;
+                }
+            }
+
+            return Image;
         }
     }
 }
