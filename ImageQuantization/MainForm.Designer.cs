@@ -46,6 +46,13 @@ namespace ImageQuantization
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.Label();
+            this.clusterTxT = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.sec = new System.Windows.Forms.Label();
+            this.msec = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -54,8 +61,8 @@ namespace ImageQuantization
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(427, 360);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -64,8 +71,8 @@ namespace ImageQuantization
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(412, 360);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -75,10 +82,10 @@ namespace ImageQuantization
             // btnOpen
             // 
             this.btnOpen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.Location = new System.Drawing.Point(540, 658);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnOpen.Location = new System.Drawing.Point(480, 526);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(123, 95);
+            this.btnOpen.Size = new System.Drawing.Size(119, 34);
             this.btnOpen.TabIndex = 2;
             this.btnOpen.Text = "Open Image";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -88,41 +95,41 @@ namespace ImageQuantization
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(244, 605);
+            this.label1.Location = new System.Drawing.Point(217, 484);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 29);
+            this.label1.Size = new System.Drawing.Size(162, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Original Image";
             // 
             // txtHeight
             // 
             this.txtHeight.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHeight.Location = new System.Drawing.Point(422, 718);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtHeight.Location = new System.Drawing.Point(375, 574);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(4);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.ReadOnly = true;
-            this.txtHeight.Size = new System.Drawing.Size(84, 31);
+            this.txtHeight.Size = new System.Drawing.Size(75, 27);
             this.txtHeight.TabIndex = 8;
             // 
             // txtWidth
             // 
             this.txtWidth.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWidth.Location = new System.Drawing.Point(422, 659);
-            this.txtWidth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtWidth.Location = new System.Drawing.Point(375, 527);
+            this.txtWidth.Margin = new System.Windows.Forms.Padding(4);
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.ReadOnly = true;
-            this.txtWidth.Size = new System.Drawing.Size(84, 31);
+            this.txtWidth.Size = new System.Drawing.Size(75, 27);
             this.txtWidth.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(339, 662);
+            this.label5.Location = new System.Drawing.Point(301, 530);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 24);
+            this.label5.Size = new System.Drawing.Size(61, 21);
             this.label5.TabIndex = 12;
             this.label5.Text = "Width";
             // 
@@ -130,10 +137,10 @@ namespace ImageQuantization
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(339, 721);
+            this.label6.Location = new System.Drawing.Point(301, 577);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 24);
+            this.label6.Size = new System.Drawing.Size(67, 21);
             this.label6.TabIndex = 13;
             this.label6.Text = "Height";
             // 
@@ -143,10 +150,10 @@ namespace ImageQuantization
             this.panel1.AutoScrollMinSize = new System.Drawing.Size(1, 1);
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(18, 19);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(16, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(655, 569);
+            this.panel1.Size = new System.Drawing.Size(583, 456);
             this.panel1.TabIndex = 15;
             // 
             // panel2
@@ -154,20 +161,20 @@ namespace ImageQuantization
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(706, 19);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(628, 15);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(630, 569);
+            this.panel2.Size = new System.Drawing.Size(560, 456);
             this.panel2.TabIndex = 16;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 658);
+            this.label7.Location = new System.Drawing.Point(12, 526);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(190, 24);
+            this.label7.Size = new System.Drawing.Size(165, 21);
             this.label7.TabIndex = 17;
             this.label7.Text = "# Distinct Colors :";
             // 
@@ -175,30 +182,30 @@ namespace ImageQuantization
             // 
             this.numberofcolor.AutoSize = true;
             this.numberofcolor.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberofcolor.Location = new System.Drawing.Point(205, 658);
+            this.numberofcolor.Location = new System.Drawing.Point(181, 526);
             this.numberofcolor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberofcolor.Name = "numberofcolor";
-            this.numberofcolor.Size = new System.Drawing.Size(0, 24);
+            this.numberofcolor.Size = new System.Drawing.Size(0, 21);
             this.numberofcolor.TabIndex = 18;
             // 
             // MST_Sum
             // 
             this.MST_Sum.AutoSize = true;
             this.MST_Sum.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MST_Sum.Location = new System.Drawing.Point(136, 695);
+            this.MST_Sum.Location = new System.Drawing.Point(121, 556);
             this.MST_Sum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MST_Sum.Name = "MST_Sum";
-            this.MST_Sum.Size = new System.Drawing.Size(0, 24);
+            this.MST_Sum.Size = new System.Drawing.Size(0, 21);
             this.MST_Sum.TabIndex = 20;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(15, 695);
+            this.label9.Location = new System.Drawing.Point(13, 556);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 24);
+            this.label9.Size = new System.Drawing.Size(100, 21);
             this.label9.TabIndex = 19;
             this.label9.Text = "MST Sum :";
             // 
@@ -206,20 +213,20 @@ namespace ImageQuantization
             // 
             this.number_of_Cluster.AutoSize = true;
             this.number_of_Cluster.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.number_of_Cluster.Location = new System.Drawing.Point(210, 731);
+            this.number_of_Cluster.Location = new System.Drawing.Point(187, 585);
             this.number_of_Cluster.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.number_of_Cluster.Name = "number_of_Cluster";
-            this.number_of_Cluster.Size = new System.Drawing.Size(0, 24);
+            this.number_of_Cluster.Size = new System.Drawing.Size(0, 21);
             this.number_of_Cluster.TabIndex = 22;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(15, 731);
+            this.label11.Location = new System.Drawing.Point(13, 585);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(205, 24);
+            this.label11.Size = new System.Drawing.Size(175, 21);
             this.label11.TabIndex = 21;
             this.label11.Text = "number of Cluster :";
             // 
@@ -227,29 +234,99 @@ namespace ImageQuantization
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(702, 658);
+            this.label2.Location = new System.Drawing.Point(624, 526);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 24);
+            this.label2.Size = new System.Drawing.Size(174, 21);
             this.label2.TabIndex = 23;
-            this.label2.Text = "Total time:";
+            this.label2.Text = "Total time in sec = ";
             // 
             // time
             // 
             this.time.AutoSize = true;
             this.time.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.time.Location = new System.Drawing.Point(828, 659);
+            this.time.Location = new System.Drawing.Point(736, 527);
             this.time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(0, 24);
+            this.time.Size = new System.Drawing.Size(0, 21);
             this.time.TabIndex = 24;
+            // 
+            // clusterTxT
+            // 
+            this.clusterTxT.BackColor = System.Drawing.SystemColors.Control;
+            this.clusterTxT.Location = new System.Drawing.Point(195, 585);
+            this.clusterTxT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clusterTxT.Name = "clusterTxT";
+            this.clusterTxT.Size = new System.Drawing.Size(60, 22);
+            this.clusterTxT.TabIndex = 25;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(945, 530);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(239, 57);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Download Image";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(624, 567);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(171, 21);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Total time in ms = ";
+            // 
+            // sec
+            // 
+            this.sec.AutoSize = true;
+            this.sec.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sec.Location = new System.Drawing.Point(795, 530);
+            this.sec.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.sec.Name = "sec";
+            this.sec.Size = new System.Drawing.Size(0, 21);
+            this.sec.TabIndex = 28;
+            // 
+            // msec
+            // 
+            this.msec.AutoSize = true;
+            this.msec.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msec.Location = new System.Drawing.Point(795, 567);
+            this.msec.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.msec.Name = "msec";
+            this.msec.Size = new System.Drawing.Size(0, 21);
+            this.msec.TabIndex = 29;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(480, 568);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 34);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "cluster it";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1360, 763);
+            this.ClientSize = new System.Drawing.Size(1209, 610);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.msec);
+            this.Controls.Add(this.sec);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.clusterTxT);
             this.Controls.Add(this.time);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.number_of_Cluster);
@@ -267,7 +344,7 @@ namespace ImageQuantization
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOpen);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Image Quantization...";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -301,6 +378,13 @@ namespace ImageQuantization
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label time;
+        private System.Windows.Forms.TextBox clusterTxT;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label sec;
+        private System.Windows.Forms.Label msec;
+        private System.Windows.Forms.Button button2;
     }
 }
 

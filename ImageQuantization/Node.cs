@@ -10,6 +10,7 @@ namespace ImageQuantization
     {
         public int index;
         public double weight;
+        public int to;
         public Node() { }
         public void set_key(double val)
         {

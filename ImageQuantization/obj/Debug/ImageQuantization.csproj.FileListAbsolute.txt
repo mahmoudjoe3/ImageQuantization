@@ -80,3 +80,77 @@ C:\Users\Mahmoud Joe\Desktop\Image contization\Image-Color-Quantization-\ImageQu
 C:\Users\Mahmoud Joe\Desktop\Image contization\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.cache
 C:\Users\Mahmoud Joe\Desktop\Image contization\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
 C:\Users\Mahmoud Joe\Desktop\Image contization\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+Y:\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.exe
+Y:\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.pdb
+Y:\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csprojAssemblyReference.cache
+Y:\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.MainForm.resources
+Y:\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.Properties.Resources.resources
+Y:\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.cache
+Y:\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
+Y:\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+D:\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
+D:\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+C:\Users\a\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.MainForm.resources
+C:\Users\a\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.Properties.Resources.resources
+C:\Users\a\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.Cache
+C:\Users\a\Desktop\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.exe
+C:\Users\a\Desktop\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.pdb
+C:\Users\a\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csprojAssemblyReference.cache
+C:\Users\a\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
+C:\Users\a\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+C:\Users\mahmed\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
+C:\Users\mahmed\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+C:\Users\mahmed\Desktop\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.exe
+C:\Users\mahmed\Desktop\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.pdb
+C:\Users\mahmed\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csprojResolveAssemblyReference.cache
+C:\Users\mahmed\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.MainForm.resources
+C:\Users\mahmed\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.Properties.Resources.resources
+C:\Users\mahmed\Desktop\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.Cache
+C:\Users\a\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.exe
+C:\Users\a\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.pdb
+C:\Users\a\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csprojAssemblyReference.cache
+C:\Users\a\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.MainForm.resources
+C:\Users\a\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.Properties.Resources.resources
+C:\Users\a\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.cache
+C:\Users\a\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
+C:\Users\a\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+C:\Users\mahmed\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
+C:\Users\mahmed\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+C:\Users\mahmed\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csprojResolveAssemblyReference.cache
+C:\Users\mahmed\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.MainForm.resources
+C:\Users\mahmed\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.Properties.Resources.resources
+C:\Users\mahmed\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.Cache
+C:\Users\mahmed\Desktop\last\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.exe
+C:\Users\mahmed\Desktop\last\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.pdb
+C:\Users\a\Desktop\last\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.exe
+C:\Users\a\Desktop\last\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.pdb
+C:\Users\a\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csprojAssemblyReference.cache
+C:\Users\a\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.MainForm.resources
+C:\Users\a\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.Properties.Resources.resources
+C:\Users\a\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.cache
+C:\Users\a\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
+C:\Users\a\Desktop\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+C:\Users\Mahmoud Joe\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.exe
+C:\Users\Mahmoud Joe\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.pdb
+C:\Users\Mahmoud Joe\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csprojAssemblyReference.cache
+C:\Users\Mahmoud Joe\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.MainForm.resources
+C:\Users\Mahmoud Joe\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.Properties.Resources.resources
+C:\Users\Mahmoud Joe\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.cache
+C:\Users\Mahmoud Joe\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
+C:\Users\Mahmoud Joe\Desktop\Final\last\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+C:\Users\Mahmoud Joe\Desktop\team 83\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.exe
+C:\Users\Mahmoud Joe\Desktop\team 83\Image-Color-Quantization-\ImageQuantization\bin\Debug\ImageQuantization.pdb
+C:\Users\Mahmoud Joe\Desktop\team 83\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csprojAssemblyReference.cache
+C:\Users\Mahmoud Joe\Desktop\team 83\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.MainForm.resources
+C:\Users\Mahmoud Joe\Desktop\team 83\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.Properties.Resources.resources
+C:\Users\Mahmoud Joe\Desktop\team 83\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.cache
+C:\Users\Mahmoud Joe\Desktop\team 83\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.exe
+C:\Users\Mahmoud Joe\Desktop\team 83\Image-Color-Quantization-\ImageQuantization\obj\Debug\ImageQuantization.pdb
+C:\Users\Mahmoud Joe\Documents\GitHub\ImageQuantization\ImageQuantization\bin\Debug\ImageQuantization.exe
+C:\Users\Mahmoud Joe\Documents\GitHub\ImageQuantization\ImageQuantization\bin\Debug\ImageQuantization.pdb
+C:\Users\Mahmoud Joe\Documents\GitHub\ImageQuantization\ImageQuantization\obj\Debug\ImageQuantization.csprojAssemblyReference.cache
+C:\Users\Mahmoud Joe\Documents\GitHub\ImageQuantization\ImageQuantization\obj\Debug\ImageQuantization.MainForm.resources
+C:\Users\Mahmoud Joe\Documents\GitHub\ImageQuantization\ImageQuantization\obj\Debug\ImageQuantization.Properties.Resources.resources
+C:\Users\Mahmoud Joe\Documents\GitHub\ImageQuantization\ImageQuantization\obj\Debug\ImageQuantization.csproj.GenerateResource.cache
+C:\Users\Mahmoud Joe\Documents\GitHub\ImageQuantization\ImageQuantization\obj\Debug\ImageQuantization.exe
+C:\Users\Mahmoud Joe\Documents\GitHub\ImageQuantization\ImageQuantization\obj\Debug\ImageQuantization.pdb

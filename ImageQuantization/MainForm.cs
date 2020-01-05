@@ -19,6 +19,7 @@ namespace ImageQuantization
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
+            
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -29,26 +30,57 @@ namespace ImageQuantization
             }
             txtWidth.Text = ImageOperations.GetWidth(ImageMatrix).ToString();
             txtHeight.Text = ImageOperations.GetHeight(ImageMatrix).ToString();
-
-            //my role
-            double before = System.Environment.TickCount;
-            Operations();
-            double after = System.Environment.TickCount;
-            double result = after - before;
-            result /= 1000;
-            time.Text = result.ToString()+" sec";
-
+           mailestoneOne();
         }
-
-       
-        private void Operations()
+        MST mst;
+        private void mailestoneOne()
         {
             numberofcolor.Text = ImageOperations.Get_Number_of_color(ImageMatrix).ToString();
-            MST mst= ImageOperations.MST_Weight(ImageMatrix);
+            mst = ImageOperations.MST_Weight(ImageMatrix);
             MST_Sum.Text = mst.Weight.ToString();
-            ImageOperations.Extract_color_palette(mst, 2);
-            
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            double before = System.Environment.TickCount;
+
+            ImageMatrix = ImageOperations.ReduceImageColor(ImageMatrix,Convert.ToInt32(clusterTxT.Text));
+            ImageOperations.DisplayImage(ImageMatrix, pictureBox2);
+
+            double after = System.Environment.TickCount;
+            double result = after - before;
+            msec.Text = result.ToString() + " M-Sec";
+            result /= 1000;
+            sec.Text = result.ToString() + " Sec";
+        }
+       
+
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Image image = pictureBox2.Image;
+            SaveImageCapture(image);
+        }
+
+        public static void SaveImageCapture(System.Drawing.Image image)
+        {
+            SaveFileDialog s = new SaveFileDialog();
+            s.FileName = "Image";
+            s.DefaultExt = ".Jpg";
+            s.Filter = "Image (.jpg)|*.jpg";
+            s.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            s.RestoreDirectory = true;
+            if (s.ShowDialog() == DialogResult.OK)
+            {
+                string filename = s.FileName;
+                using (System.IO.FileStream fstream = new System.IO.FileStream(filename, System.IO.FileMode.Create))
+                {
+                    image.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    fstream.Close();
+                }
+            }
+        }
+
        
     }
 }
